@@ -47,8 +47,6 @@ void Usart_NVIC_Init()
 }
 
 COMMAND_PARSER parser;
-int32_t target_roll;
-int32_t target_yaw;
 
 void OnRecieve(int32_t data)
 {
@@ -56,41 +54,6 @@ void OnRecieve(int32_t data)
 	static int8_t yaw_buffer[10];
 	PARSER_RunPaser(&parser,data);
 	
-	if(parser.status==STATE_PARSE_FINISH_PENDING)
-	{	
-//		printf("9");
-		target_roll=parser.data_roll;
-		target_yaw=parser.data_yaw;
-		if(parser.isMinus_Roll)
-		{
-			target_roll+=90;
-		}
-		else
-		{
-			target_roll=-target_roll+90;
-		}
-		
-		if(parser.isMinus_Yaw)
-		{
-			target_yaw=-target_yaw;
-		}
-		
-		
-//		for(int i=0;i<10;i++)
-//		{
-//			target_roll+=roll_buffer[i];
-//			target_yaw+=yaw_buffer[i];
-//		}
-//		
-//		target_roll/=10;
-//		target_yaw/=10;
-		
-		printf("%c%c",target_roll,target_yaw);
-		Roll(target_roll);
-		YawToAngle(target_yaw);
-		
-		PARSER_Reset(&parser);
-	}
 }
 
 	

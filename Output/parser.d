@@ -2,7 +2,7 @@
 ..\..\output\parser.o: ..\..\User\parser.h
 ..\..\output\parser.o: ..\..\Libraries\CMSIS\stm32f10x.h
 ..\..\output\parser.o: ..\..\Libraries\CMSIS\core_cm3.h
-..\..\output\parser.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\..\output\parser.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\..\output\parser.o: ..\..\Libraries\CMSIS\system_stm32f10x.h
 ..\..\output\parser.o: ..\..\User\stm32f10x_conf.h
 ..\..\output\parser.o: ..\..\Libraries\FWlib\inc\stm32f10x_gpio.h
@@ -12,4 +12,4 @@
 ..\..\output\parser.o: ..\..\Libraries\FWlib\inc\stm32f10x_usart.h
 ..\..\output\parser.o: ..\..\Libraries\FWlib\inc\misc.h
 ..\..\output\parser.o: ..\..\User\usart.h
-..\..\output\parser.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\..\output\parser.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
