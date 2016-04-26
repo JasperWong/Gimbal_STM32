@@ -603,6 +603,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\User\timer.c</FilePath>
             </File>
+            <File>
+              <FileName>parser.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\User\parser.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

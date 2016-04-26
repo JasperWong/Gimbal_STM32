@@ -1,4 +1,9 @@
 #include "usart.h"
+#include "bsp_pwm_output.h"
+#include "parser.h"
+
+#define RECEIVE_BUF_SIZE 32
+static uint8_t isDone=0;
 
 void USART_Config()
 {
@@ -41,6 +46,153 @@ void Usart_NVIC_Init()
     NVIC_Init(&NVIC_InitStructure);
 }
 
+COMMAND_PARSER parser;
+int32_t target_roll;
+int32_t target_yaw;
+
+void OnRecieve(int32_t data)
+{
+	static int8_t roll_buffer[10];
+	static int8_t yaw_buffer[10];
+	PARSER_RunPaser(&parser,data);
+	
+	if(parser.status==STATE_PARSE_FINISH_PENDING)
+	{	
+		
+		static int8_t roll_buffer[10];
+        static int8_t yaw_buffer[10];
+//		printf("9");
+		target_roll=parser.data_roll;
+		target_yaw=parser.data_yaw;
+		if(parser.isMinus_Roll)
+		{
+			target_roll=-target_roll+90;
+		}
+		else
+		{
+			target_roll+=90;
+		}
+		
+		if(parser.isMinus_Yaw)
+		{
+			target_yaw=-target_yaw;
+		}
+		
+		
+//		for(int i=0;i<10;i++)
+//		{
+//			target_roll+=roll_buffer[i];
+//			target_yaw+=yaw_buffer[i];
+//		}
+//		
+//		target_roll/=10;
+//		target_yaw/=10;
+		
+		printf("%c%c",target_roll,target_yaw);
+			
+		PARSER_Reset(&parser);
+	}
+}
+
+	
+	
+//	static int8_t roll_buffer[10];
+//	static int8_t yaw_buffer[10];
+//	static uint8_t buffer_read_bit=0;
+//	static uint8_t bit=0;
+//	int16_t roll;
+//	int16_t yaw;
+//	uint8_t read_bit;
+//	int16_t roll_final=0;
+//	int16_t yaw_final=0;
+//	int16_t data_buff[RECEIVE_BUF_SIZE];
+//	
+//	if(!isDone)
+//	{
+//		if (data=='X')   bit=0;
+//		if (data=='\n')  isDone=1;
+//		data_buff[bit]=data;
+//		bit++;
+//	}
+
+//	if (isDone)
+//	{
+//		uint8_t isMinus_roll=0;
+//		uint8_t isMinus_yaw=0;
+//		roll=0;
+//		yaw=0;
+//		isMinus_roll=0;
+//		isMinus_yaw=0;
+//		read_bit=2;
+//		/**getRoll**/
+//		while (data_buff[read_bit]!=' ')
+//		{
+//			if (data_buff[read_bit]=='-')
+//			{
+//				isMinus_roll=1;
+//				read_bit++;
+//				continue;
+//			}
+//			roll=roll*10+(data_buff[read_bit]-'0');
+//			read_bit++;
+//		}
+//						
+//		/**getyaw**/
+//		do{
+//			read_bit++;
+//		}
+//		while(data_buff[read_bit]!=':');
+//		
+//		read_bit++;
+//		
+//		while (data_buff[read_bit]!=' ')
+//		{
+//			if (data_buff[read_bit]=='-')
+//			{
+//				isMinus_yaw=1;
+//				read_bit++;
+//				continue;
+//			}
+//			yaw=yaw*10+(data_buff[read_bit]-'0');
+//			read_bit++;
+//		}
+
+//		if (isMinus_roll)
+//		{
+//			roll=-roll;
+//			isMinus_roll=0;
+//		}
+//		if (isMinus_yaw)
+//		{
+//			yaw=-yaw;
+//			isMinus_yaw=0;
+//		}
+//		
+//		roll+=90;								//VR's angle to Gimbal's angle
+//		
+//		roll_buffer[buffer_read_bit]=roll;
+//		yaw_buffer[buffer_read_bit]=yaw;
+//				buffer_read_bit++;
+//				if(buffer_read_bit>10) buffer_read_bit=0;
+//				for(int i=0;i<10;i++)
+//				{
+//					roll_final+=roll_buffer[i];
+//					yaw_final+=yaw_buffer[i];
+//				}
+//				roll_final/=10;
+//				yaw_final/=10;
+//				
+//		printf("%c%c",roll_final,yaw_final);
+//		Roll(roll);
+//		YawToAngle(yaw);
+//				
+//		isDone=0;
+//	}
+
+//}
+
+
+
 /// 重定向c库函数printf到USART1
 int fputc(int ch, FILE *f)
 {
@@ -61,3 +213,5 @@ int fgetc(FILE *f)
     
 		return (int)USART_ReceiveData(USART1);
 }
+
+

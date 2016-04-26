@@ -30,6 +30,7 @@
 "..\..\output\bsp_pwm_output.o"
 "..\..\output\usart.o"
 "..\..\output\timer.o"
+"..\..\output\parser.o"
 --library_type=microlib --strict --scatter "..\..\Output\gimbal.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

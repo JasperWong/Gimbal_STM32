@@ -170,7 +170,7 @@ void TIM2_IRQHandler(void)
     }
 }
 
-extern void OnRecieve(int16_t data);
+extern void OnRecieve(int32_t data);
 
 void USART1_IRQHandler(void)
 {

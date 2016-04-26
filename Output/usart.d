@@ -12,3 +12,5 @@
 ..\..\output\usart.o: ..\..\Libraries\FWlib\inc\stm32f10x_usart.h
 ..\..\output\usart.o: ..\..\Libraries\FWlib\inc\misc.h
 ..\..\output\usart.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\..\output\usart.o: ..\..\User\PwmOutput\bsp_pwm_output.h
+..\..\output\usart.o: ..\..\User\parser.h

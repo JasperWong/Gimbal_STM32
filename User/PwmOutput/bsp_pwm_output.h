@@ -10,7 +10,7 @@
 void TIM3_PWM_Init(void);	
 void Roll(u16 angle);
 void Yaw(u16 turn);
-void Reset();
+void Reset(void);
 void YawAngle(int16_t angle);
 void YawToAngle(uint16_t angle);
 
