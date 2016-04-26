@@ -58,19 +58,16 @@ void OnRecieve(int32_t data)
 	
 	if(parser.status==STATE_PARSE_FINISH_PENDING)
 	{	
-		
-		static int8_t roll_buffer[10];
-        static int8_t yaw_buffer[10];
 //		printf("9");
 		target_roll=parser.data_roll;
 		target_yaw=parser.data_yaw;
 		if(parser.isMinus_Roll)
 		{
-			target_roll=-target_roll+90;
+			target_roll+=90;
 		}
 		else
 		{
-			target_roll+=90;
+			target_roll=-target_roll+90;
 		}
 		
 		if(parser.isMinus_Yaw)
@@ -89,7 +86,9 @@ void OnRecieve(int32_t data)
 //		target_yaw/=10;
 		
 		printf("%c%c",target_roll,target_yaw);
-			
+		Roll(target_roll);
+		YawToAngle(target_yaw);
+		
 		PARSER_Reset(&parser);
 	}
 }
