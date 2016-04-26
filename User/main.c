@@ -5,7 +5,6 @@
 #include "parser.h"
 
 extern COMMAND_PARSER parser;
-uint8_t	isFinish=1;
 static int16_t roll_buffer[10];
 static int16_t yaw_buffer[10];
 

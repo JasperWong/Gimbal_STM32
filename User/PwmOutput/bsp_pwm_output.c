@@ -149,7 +149,7 @@ void YawAngle(int16_t angle)
 	if(angle<0) Yaw(CLOCKWISE);
 	if(angle>0) Yaw(COUNTERCLOCKWISE);
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2 , ENABLE);
-    if(angle<0) time_index=(-angle)*25;
+    if(angle<0) time_index=(-angle)*26;
 	else time_index=angle*26;
 }
 

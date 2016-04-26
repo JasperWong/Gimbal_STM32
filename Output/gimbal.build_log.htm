@@ -22,18 +22,28 @@ Dialog DLL:      TARMSTM.DLL V1.64.0.0
  
 <h2>Project:</h2>
 J:\STM32_Workplace\Gimbal_STM32\Project\RVMDK£¨uv5£©\Gimbal.uvprojx
-Project File Date:  04/26/2016
+Project File Date:  04/27/2016
 
 <h2>Output:</h2>
 Build target 'Gimbal'
 compiling main.c...
 ..\..\User\parser.h(18): warning:  #40-D: expected an identifier
         };
-..\..\User\main.c: 1 warning, 0 errors
+..\..\User\main.c(24): warning:  #177-D: variable "buff_bit" was declared but never referenced
+        uint8_t buff_bit=0;
+..\..\User\main.c(8): warning:  #177-D: variable "roll_buffer" was declared but never referenced
+  static int16_t roll_buffer[10];
+..\..\User\main.c(9): warning:  #177-D: variable "yaw_buffer" was declared but never referenced
+  static int16_t yaw_buffer[10];
+..\..\User\main.c: 4 warnings, 0 errors
+compiling bsp_pwm_output.c...
+..\..\User\PwmOutput\bsp_pwm_output.c(131): warning:  #186-D: pointless comparison of unsigned integer with zero
+      if((angle<0)||(angle>135)) return;
+..\..\User\PwmOutput\bsp_pwm_output.c: 1 warning, 0 errors
 linking...
-Program Size: Code=9892 RO-data=336 RW-data=64 ZI-data=1080  
+Program Size: Code=9816 RO-data=336 RW-data=64 ZI-data=1040  
 FromELF: creating hex file...
-"..\..\Output\gimbal.axf" - 0 Error(s), 1 Warning(s).
+"..\..\Output\gimbal.axf" - 0 Error(s), 5 Warning(s).
 
 <h2>Collection of Component include folders:</h2>
   J:\STM32_Workplace\Gimbal_STM32\Project\RVMDK£¨uv5£©\RTE
