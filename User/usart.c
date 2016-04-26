@@ -50,8 +50,7 @@ COMMAND_PARSER parser;
 
 void OnRecieve(int32_t data)
 {
-	static int8_t roll_buffer[10];
-	static int8_t yaw_buffer[10];
+
 	PARSER_RunPaser(&parser,data);
 	
 }

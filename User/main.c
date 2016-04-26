@@ -6,6 +6,8 @@
 
 extern COMMAND_PARSER parser;
 uint8_t	isFinish=1;
+static int16_t roll_buffer[10];
+static int16_t yaw_buffer[10];
 
 int main()
 {
@@ -18,48 +20,59 @@ int main()
 
     int32_t target_roll;
     int32_t target_yaw;
+	int32_t final_roll=0;
+	int32_t final_yaw=0;
+	uint8_t buff_bit=0;
     while (1)
     {
-
         if (parser.status==STATE_PARSE_FINISH_PENDING)
         {
-			
-//            if (parser.status==STATE_PARSE_FINISH_PENDING)
-//            {
-//		printf("9");
-                target_roll=parser.data_roll;
-                target_yaw=parser.data_yaw;
-                if (parser.isMinus_Roll)
-                {
-                    target_roll+=90;
-                }
-                else
-                {
-                    target_roll=-target_roll+90;
-                }
 
-                if (parser.isMinus_Yaw)
-                {
-                    target_yaw=-target_yaw;
-                }
+            target_roll=parser.data_roll;
+            target_yaw=parser.data_yaw;
+            if (parser.isMinus_Roll)
+            {
+                target_roll+=90;
+            }
+            else
+            {
+                target_roll=-target_roll+90;
+            }
 
+            if (parser.isMinus_Yaw)
+            {
+                target_yaw=-target_yaw;
+            }
 
+//		roll_buffer[buff_bit]=target_roll;
+//		yaw_buffer[buff_bit]=target_yaw;
+//		buff_bit++;
+
+//			
 //		for(int i=0;i<10;i++)
 //		{
-//			target_roll+=roll_buffer[i];
-//			target_yaw+=yaw_buffer[i];
+//			final_roll+=roll_buffer[i];
+//			final_yaw+=yaw_buffer[i];
 //		}
-//
-//		target_roll/=10;
-//		target_yaw/=10;
 
-                printf("%c%c",target_roll,target_yaw);
-                Roll(target_roll);
-                YawToAngle(target_yaw);
-                PARSER_Reset(&parser);
-            }
+//		final_roll/=10;
+//		final_yaw/=10;
+
+		printf("%c%c",final_roll,final_yaw);
+		Roll(target_roll);
+		YawToAngle(target_yaw);
+		
+//		if(buff_bit>9) 
+//		{
+//			buff_bit=0;	
+//			final_roll=0;
+//			final_yaw=0;
+//		}
+		
+		PARSER_Reset(&parser);
         }
+    }
 
-//    }
 }
+
 
