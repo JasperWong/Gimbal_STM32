@@ -1,4 +1,4 @@
-Output/
-.o
-.uvoptx
-.map
+Output/* 
+*.o  	
+*.uvoptx 
+*.map	
