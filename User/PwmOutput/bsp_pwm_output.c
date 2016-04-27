@@ -159,6 +159,7 @@ void YawAngle(int16_t angle)
 void YawToAngle(uint16_t angle)
 {
 	static int16_t temp_angle=0;
+    time_total=0;
 	temp_angle=angle-angle_current;
 	if(temp_angle>180) temp_angle-=360;
 	if(temp_angle<(-180)) temp_angle+=360;

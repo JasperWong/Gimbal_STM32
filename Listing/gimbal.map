@@ -464,28 +464,28 @@ Image Symbol Table
     .text                                    0x08001940   Section        0  stm32f10x_usart.o(.text)
     .text                                    0x08001d48   Section        0  main.o(.text)
     .text                                    0x08001dc4   Section        0  stm32f10x_it.o(.text)
-    .text                                    0x08001e9c   Section        0  bsp_pwm_output.o(.text)
-    TIM3_GPIO_Config                         0x08001e9d   Thumb Code    60  bsp_pwm_output.o(.text)
-    TIM3_Mode_Config                         0x08001ed9   Thumb Code   158  bsp_pwm_output.o(.text)
-    .text                                    0x080020e8   Section        0  usart.o(.text)
-    .text                                    0x080021e4   Section        0  timer.o(.text)
-    .text                                    0x0800225e   Section        0  parser.o(.text)
-    .text                                    0x08002312   Section        0  dadd.o(.text)
-    .text                                    0x08002460   Section        0  ddiv.o(.text)
-    .text                                    0x0800253e   Section        0  dfltui.o(.text)
-    .text                                    0x08002558   Section        0  dfixui.o(.text)
-    .text                                    0x0800258a   Section        0  llshl.o(.text)
-    .text                                    0x080025a8   Section        0  llushr.o(.text)
-    .text                                    0x080025c8   Section        0  llsshr.o(.text)
-    .text                                    0x080025ec   Section        0  iusefp.o(.text)
-    .text                                    0x080025ec   Section        0  depilogue.o(.text)
-    .text                                    0x080026a8   Section       36  init.o(.text)
-    i.__0printf$2                            0x080026cc   Section        0  printf2.o(i.__0printf$2)
-    i.__scatterload_copy                     0x080026ec   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x080026fa   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x080026fc   Section       14  handlers.o(i.__scatterload_zeroinit)
-    i._printf_core                           0x0800270a   Section        0  printf2.o(i._printf_core)
-    _printf_core                             0x0800270b   Thumb Code   214  printf2.o(i._printf_core)
+    .text                                    0x08001ea4   Section        0  bsp_pwm_output.o(.text)
+    TIM3_GPIO_Config                         0x08001ea5   Thumb Code    60  bsp_pwm_output.o(.text)
+    TIM3_Mode_Config                         0x08001ee1   Thumb Code   158  bsp_pwm_output.o(.text)
+    .text                                    0x080020f8   Section        0  usart.o(.text)
+    .text                                    0x080021f4   Section        0  timer.o(.text)
+    .text                                    0x0800226e   Section        0  parser.o(.text)
+    .text                                    0x08002322   Section        0  dadd.o(.text)
+    .text                                    0x08002470   Section        0  ddiv.o(.text)
+    .text                                    0x0800254e   Section        0  dfltui.o(.text)
+    .text                                    0x08002568   Section        0  dfixui.o(.text)
+    .text                                    0x0800259a   Section        0  llshl.o(.text)
+    .text                                    0x080025b8   Section        0  llushr.o(.text)
+    .text                                    0x080025d8   Section        0  llsshr.o(.text)
+    .text                                    0x080025fc   Section        0  iusefp.o(.text)
+    .text                                    0x080025fc   Section        0  depilogue.o(.text)
+    .text                                    0x080026b8   Section       36  init.o(.text)
+    i.__0printf$2                            0x080026dc   Section        0  printf2.o(i.__0printf$2)
+    i.__scatterload_copy                     0x080026fc   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x0800270a   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x0800270c   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i._printf_core                           0x0800271a   Section        0  printf2.o(i._printf_core)
+    _printf_core                             0x0800271b   Thumb Code   214  printf2.o(i._printf_core)
     .data                                    0x20000000   Section       20  system_stm32f10x.o(.data)
     .data                                    0x20000014   Section       20  stm32f10x_rcc.o(.data)
     APBAHBPrescTable                         0x20000014   Data          16  stm32f10x_rcc.o(.data)
@@ -802,48 +802,48 @@ Image Symbol Table
     DebugMon_Handler                         0x08001dd9   Thumb Code     2  stm32f10x_it.o(.text)
     PendSV_Handler                           0x08001ddb   Thumb Code     2  stm32f10x_it.o(.text)
     SysTick_Handler                          0x08001ddd   Thumb Code     2  stm32f10x_it.o(.text)
-    TIM2_IRQHandler                          0x08001ddf   Thumb Code   138  stm32f10x_it.o(.text)
-    USART1_IRQHandler                        0x08001e69   Thumb Code    28  stm32f10x_it.o(.text)
-    TIM3_PWM_Init                            0x08001f77   Thumb Code    12  bsp_pwm_output.o(.text)
-    Roll                                     0x08001f83   Thumb Code    76  bsp_pwm_output.o(.text)
-    Yaw                                      0x08001fcf   Thumb Code    54  bsp_pwm_output.o(.text)
-    YawAngle                                 0x08002005   Thumb Code    78  bsp_pwm_output.o(.text)
-    YawToAngle                               0x08002053   Thumb Code    76  bsp_pwm_output.o(.text)
-    Reset                                    0x0800209f   Thumb Code    24  bsp_pwm_output.o(.text)
-    USART_Config                             0x080020e9   Thumb Code   126  usart.o(.text)
-    Usart_NVIC_Init                          0x08002167   Thumb Code    40  usart.o(.text)
-    OnRecieve                                0x0800218f   Thumb Code    14  usart.o(.text)
-    fputc                                    0x0800219d   Thumb Code    32  usart.o(.text)
-    fgetc                                    0x080021bd   Thumb Code    26  usart.o(.text)
-    TIM2_NVIC_Configuration                  0x080021e5   Thumb Code    42  timer.o(.text)
-    Timer2_Config                            0x0800220f   Thumb Code    80  timer.o(.text)
-    PARSER_Reset                             0x0800225f   Thumb Code     6  parser.o(.text)
-    PARSER_RunPaser                          0x08002265   Thumb Code   174  parser.o(.text)
-    __aeabi_dadd                             0x08002313   Thumb Code   322  dadd.o(.text)
-    __aeabi_dsub                             0x08002455   Thumb Code     6  dadd.o(.text)
-    __aeabi_drsub                            0x0800245b   Thumb Code     6  dadd.o(.text)
-    __aeabi_ddiv                             0x08002461   Thumb Code   222  ddiv.o(.text)
-    __aeabi_ui2d                             0x0800253f   Thumb Code    26  dfltui.o(.text)
-    __aeabi_d2uiz                            0x08002559   Thumb Code    50  dfixui.o(.text)
-    __aeabi_llsl                             0x0800258b   Thumb Code    30  llshl.o(.text)
-    _ll_shift_l                              0x0800258b   Thumb Code     0  llshl.o(.text)
-    __aeabi_llsr                             0x080025a9   Thumb Code    32  llushr.o(.text)
-    _ll_ushift_r                             0x080025a9   Thumb Code     0  llushr.o(.text)
-    __aeabi_lasr                             0x080025c9   Thumb Code    36  llsshr.o(.text)
-    _ll_sshift_r                             0x080025c9   Thumb Code     0  llsshr.o(.text)
-    __I$use$fp                               0x080025ed   Thumb Code     0  iusefp.o(.text)
-    _double_round                            0x080025ed   Thumb Code    30  depilogue.o(.text)
-    _double_epilogue                         0x0800260b   Thumb Code   156  depilogue.o(.text)
-    __scatterload                            0x080026a9   Thumb Code    28  init.o(.text)
-    __scatterload_rt2                        0x080026a9   Thumb Code     0  init.o(.text)
-    __0printf$2                              0x080026cd   Thumb Code    22  printf2.o(i.__0printf$2)
-    __1printf$2                              0x080026cd   Thumb Code     0  printf2.o(i.__0printf$2)
-    __2printf                                0x080026cd   Thumb Code     0  printf2.o(i.__0printf$2)
-    __scatterload_copy                       0x080026ed   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x080026fb   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x080026fd   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    Region$$Table$$Base                      0x080027e0   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08002800   Number         0  anon$$obj.o(Region$$Table)
+    TIM2_IRQHandler                          0x08001ddf   Thumb Code   144  stm32f10x_it.o(.text)
+    USART1_IRQHandler                        0x08001e6f   Thumb Code    28  stm32f10x_it.o(.text)
+    TIM3_PWM_Init                            0x08001f7f   Thumb Code    12  bsp_pwm_output.o(.text)
+    Roll                                     0x08001f8b   Thumb Code    76  bsp_pwm_output.o(.text)
+    Yaw                                      0x08001fd7   Thumb Code    54  bsp_pwm_output.o(.text)
+    YawAngle                                 0x0800200d   Thumb Code    78  bsp_pwm_output.o(.text)
+    YawToAngle                               0x0800205b   Thumb Code    82  bsp_pwm_output.o(.text)
+    Reset                                    0x080020ad   Thumb Code    24  bsp_pwm_output.o(.text)
+    USART_Config                             0x080020f9   Thumb Code   126  usart.o(.text)
+    Usart_NVIC_Init                          0x08002177   Thumb Code    40  usart.o(.text)
+    OnRecieve                                0x0800219f   Thumb Code    14  usart.o(.text)
+    fputc                                    0x080021ad   Thumb Code    32  usart.o(.text)
+    fgetc                                    0x080021cd   Thumb Code    26  usart.o(.text)
+    TIM2_NVIC_Configuration                  0x080021f5   Thumb Code    42  timer.o(.text)
+    Timer2_Config                            0x0800221f   Thumb Code    80  timer.o(.text)
+    PARSER_Reset                             0x0800226f   Thumb Code     6  parser.o(.text)
+    PARSER_RunPaser                          0x08002275   Thumb Code   174  parser.o(.text)
+    __aeabi_dadd                             0x08002323   Thumb Code   322  dadd.o(.text)
+    __aeabi_dsub                             0x08002465   Thumb Code     6  dadd.o(.text)
+    __aeabi_drsub                            0x0800246b   Thumb Code     6  dadd.o(.text)
+    __aeabi_ddiv                             0x08002471   Thumb Code   222  ddiv.o(.text)
+    __aeabi_ui2d                             0x0800254f   Thumb Code    26  dfltui.o(.text)
+    __aeabi_d2uiz                            0x08002569   Thumb Code    50  dfixui.o(.text)
+    __aeabi_llsl                             0x0800259b   Thumb Code    30  llshl.o(.text)
+    _ll_shift_l                              0x0800259b   Thumb Code     0  llshl.o(.text)
+    __aeabi_llsr                             0x080025b9   Thumb Code    32  llushr.o(.text)
+    _ll_ushift_r                             0x080025b9   Thumb Code     0  llushr.o(.text)
+    __aeabi_lasr                             0x080025d9   Thumb Code    36  llsshr.o(.text)
+    _ll_sshift_r                             0x080025d9   Thumb Code     0  llsshr.o(.text)
+    __I$use$fp                               0x080025fd   Thumb Code     0  iusefp.o(.text)
+    _double_round                            0x080025fd   Thumb Code    30  depilogue.o(.text)
+    _double_epilogue                         0x0800261b   Thumb Code   156  depilogue.o(.text)
+    __scatterload                            0x080026b9   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x080026b9   Thumb Code     0  init.o(.text)
+    __0printf$2                              0x080026dd   Thumb Code    22  printf2.o(i.__0printf$2)
+    __1printf$2                              0x080026dd   Thumb Code     0  printf2.o(i.__0printf$2)
+    __2printf                                0x080026dd   Thumb Code     0  printf2.o(i.__0printf$2)
+    __scatterload_copy                       0x080026fd   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x0800270b   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x0800270d   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    Region$$Table$$Base                      0x080027f0   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08002810   Number         0  anon$$obj.o(Region$$Table)
     SystemCoreClock                          0x20000000   Data           4  system_stm32f10x.o(.data)
     AHBPrescTable                            0x20000004   Data          16  system_stm32f10x.o(.data)
     time_once                                0x20000028   Data           4  bsp_pwm_output.o(.data)
@@ -866,9 +866,9 @@ Memory Map of the image
 
   Image Entry point : 0x08000131
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00002848, Max: 0x00080000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00002858, Max: 0x00080000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x00002800, Max: 0x00080000, ABSOLUTE)
+    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x00002810, Max: 0x00080000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -891,28 +891,28 @@ Memory Map of the image
     0x0800193e   0x00000002   PAD
     0x08001940   0x00000408   Code   RO          376    .text               stm32f10x_usart.o
     0x08001d48   0x0000007c   Code   RO          403    .text               main.o
-    0x08001dc4   0x000000d8   Code   RO          434    .text               stm32f10x_it.o
-    0x08001e9c   0x0000024c   Code   RO          454    .text               bsp_pwm_output.o
-    0x080020e8   0x000000fc   Code   RO          469    .text               usart.o
-    0x080021e4   0x0000007a   Code   RO          485    .text               timer.o
-    0x0800225e   0x000000b4   Code   RO          497    .text               parser.o
-    0x08002312   0x0000014e   Code   RO          773    .text               mf_w.l(dadd.o)
-    0x08002460   0x000000de   Code   RO          775    .text               mf_w.l(ddiv.o)
-    0x0800253e   0x0000001a   Code   RO          777    .text               mf_w.l(dfltui.o)
-    0x08002558   0x00000032   Code   RO          779    .text               mf_w.l(dfixui.o)
-    0x0800258a   0x0000001e   Code   RO          800    .text               mc_w.l(llshl.o)
-    0x080025a8   0x00000020   Code   RO          802    .text               mc_w.l(llushr.o)
-    0x080025c8   0x00000024   Code   RO          804    .text               mc_w.l(llsshr.o)
-    0x080025ec   0x00000000   Code   RO          806    .text               mc_w.l(iusefp.o)
-    0x080025ec   0x000000ba   Code   RO          807    .text               mf_w.l(depilogue.o)
-    0x080026a6   0x00000002   PAD
-    0x080026a8   0x00000024   Code   RO          815    .text               mc_w.l(init.o)
-    0x080026cc   0x00000020   Code   RO          579    i.__0printf$2       mc_w.l(printf2.o)
-    0x080026ec   0x0000000e   Code   RO          819    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x080026fa   0x00000002   Code   RO          820    i.__scatterload_null  mc_w.l(handlers.o)
-    0x080026fc   0x0000000e   Code   RO          821    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x0800270a   0x000000d6   Code   RO          586    i._printf_core      mc_w.l(printf2.o)
-    0x080027e0   0x00000020   Data   RO          817    Region$$Table       anon$$obj.o
+    0x08001dc4   0x000000e0   Code   RO          434    .text               stm32f10x_it.o
+    0x08001ea4   0x00000254   Code   RO          454    .text               bsp_pwm_output.o
+    0x080020f8   0x000000fc   Code   RO          469    .text               usart.o
+    0x080021f4   0x0000007a   Code   RO          485    .text               timer.o
+    0x0800226e   0x000000b4   Code   RO          497    .text               parser.o
+    0x08002322   0x0000014e   Code   RO          773    .text               mf_w.l(dadd.o)
+    0x08002470   0x000000de   Code   RO          775    .text               mf_w.l(ddiv.o)
+    0x0800254e   0x0000001a   Code   RO          777    .text               mf_w.l(dfltui.o)
+    0x08002568   0x00000032   Code   RO          779    .text               mf_w.l(dfixui.o)
+    0x0800259a   0x0000001e   Code   RO          800    .text               mc_w.l(llshl.o)
+    0x080025b8   0x00000020   Code   RO          802    .text               mc_w.l(llushr.o)
+    0x080025d8   0x00000024   Code   RO          804    .text               mc_w.l(llsshr.o)
+    0x080025fc   0x00000000   Code   RO          806    .text               mc_w.l(iusefp.o)
+    0x080025fc   0x000000ba   Code   RO          807    .text               mf_w.l(depilogue.o)
+    0x080026b6   0x00000002   PAD
+    0x080026b8   0x00000024   Code   RO          815    .text               mc_w.l(init.o)
+    0x080026dc   0x00000020   Code   RO          579    i.__0printf$2       mc_w.l(printf2.o)
+    0x080026fc   0x0000000e   Code   RO          819    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x0800270a   0x00000002   Code   RO          820    i.__scatterload_null  mc_w.l(handlers.o)
+    0x0800270c   0x0000000e   Code   RO          821    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x0800271a   0x000000d6   Code   RO          586    i._printf_core      mc_w.l(printf2.o)
+    0x080027f0   0x00000020   Data   RO          817    Region$$Table       anon$$obj.o
 
 
     Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x00000458, Max: 0x00010000, ABSOLUTE)
@@ -935,14 +935,14 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       588         50          0         26          0       2579   bsp_pwm_output.o
+       596         52          0         26          0       2587   bsp_pwm_output.o
          0          0          0          0          0       4504   core_cm3.o
        124         26          0          0          0       2415   main.o
        220         22          0          0          0       1773   misc.o
        180          8          0          0          0       1087   parser.o
         36          8        304          0       1024        844   startup_stm32f10x_hd.o
        860         38          0          0          0       5613   stm32f10x_gpio.o
-       216         24          0          0          0       1572   stm32f10x_it.o
+       224         26          0          0          0       1576   stm32f10x_it.o
        932         36          0         20          0       8760   stm32f10x_rcc.o
       3610         88          0          0          0      22100   stm32f10x_tim.o
       1032         22          0          0          0       8340   stm32f10x_usart.o
@@ -951,7 +951,7 @@ Image component sizes
        252         14          0          0         16       1478   usart.o
 
     ----------------------------------------------------------------------
-      8654        374        336         68       1040     311804   Object Totals
+      8670        378        336         68       1040     311816   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          2          0          0          2          0          0   (incl. Padding)
 
@@ -1002,15 +1002,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      9904        400        336         72       1040     311472   Grand Totals
-      9904        400        336         72       1040     311472   ELF Image Totals
-      9904        400        336         72          0          0   ROM Totals
+      9920        404        336         72       1040     311484   Grand Totals
+      9920        404        336         72       1040     311484   ELF Image Totals
+      9920        404        336         72          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                10240 (  10.00kB)
+    Total RO  Size (Code + RO Data)                10256 (  10.02kB)
     Total RW  Size (RW Data + ZI Data)              1112 (   1.09kB)
-    Total ROM Size (Code + RO Data + RW Data)      10312 (  10.07kB)
+    Total ROM Size (Code + RO Data + RW Data)      10328 (  10.09kB)
 
 ==============================================================================
 
