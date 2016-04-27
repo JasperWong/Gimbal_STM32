@@ -17,9 +17,11 @@
   
 #include "bsp_pwm_output.h" 
 
-volatile u32 time;
+volatile u32 time_once;
+volatile u32 time_total;
 uint32_t time_index=0;
-uint32_t angle_current=0;
+volatile uint32_t angle_current=0;
+int16_t angle_yaw=0;
 
 u16 Roll_Val=1500;                      /*gibal_roll:1000-1800 mid:1500*/ 
 u16 Yaw_Val=1500;                       /*gimbal_yaw:stop:1500 counterclockwise:<1500 clockwise: >1500*/   
@@ -146,11 +148,12 @@ void Yaw(u16 turn)
 void YawAngle(int16_t angle)
 {	
 	if(angle<-360||angle>360) return;
+    angle_yaw=angle;
 	if(angle<0) Yaw(CLOCKWISE);
 	if(angle>0) Yaw(COUNTERCLOCKWISE);
-	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2 , ENABLE);
     if(angle<0) time_index=(-angle)*26;
 	else time_index=angle*26;
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2 , ENABLE);
 }
 
 void YawToAngle(uint16_t angle)
@@ -160,7 +163,7 @@ void YawToAngle(uint16_t angle)
 	if(temp_angle>180) temp_angle-=360;
 	if(temp_angle<(-180)) temp_angle+=360;
 	YawAngle(temp_angle);
-	angle_current=angle;
+//	angle_current=angle;
 }
 	
 void Reset()
