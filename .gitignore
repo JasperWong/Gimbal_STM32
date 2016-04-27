@@ -1,4 +1,4 @@
-Output/* 
+/Output/* 
 *.o  	
 *.uvoptx 
 *.map	

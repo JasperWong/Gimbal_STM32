@@ -58,7 +58,7 @@ int main()
 
             printf("%c%c",target_roll,target_yaw);
             Roll(target_roll);
-            YawAngle(target_yaw);
+            YawToAngle(target_yaw);
 		
 //		if(buff_bit>9) 
 //		{

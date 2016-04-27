@@ -186,6 +186,7 @@ void TIM2_IRQHandler(void)
             else
             {
                 Yaw(STOP);
+                time_total=0;
                 RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2 , DISABLE);
             }
             
