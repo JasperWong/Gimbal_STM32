@@ -47,6 +47,12 @@ static void TIM3_GPIO_Config(void)
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
   GPIO_Init(GPIOA, &GPIO_InitStructure);
 
+  GPIO_InitStructure.GPIO_Pin= GPIO_Pin_4|GPIO_Pin_5;
+  GPIO_InitStructure.GPIO_Mode=GPIO_Mode_Out_PP;
+  GPIO_InitStructure.GPIO_Speed=GPIO_Speed_50MHz;
+  GPIO_Init(GPIOA,&GPIO_InitStructure);
+  GPIO_ResetBits(GPIOA,GPIO_Pin_4|GPIO_Pin_5);
+    
   /*GPIOB Configuration: TIM3 channel 3 and 4 as alternate function push-pull */
   GPIO_InitStructure.GPIO_Pin =  GPIO_Pin_0 | GPIO_Pin_1;
   GPIO_Init(GPIOB, &GPIO_InitStructure);
