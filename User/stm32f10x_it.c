@@ -31,7 +31,8 @@
 
 
 
-extern volatile u32 time;
+extern volatile u32 time_once;
+extern volatile u32 time_total;
 extern uint32_t time_index;
 
 /** @addtogroup STM32F10x_StdPeriph_Template
@@ -135,6 +136,7 @@ void DebugMon_Handler(void)
   */
 void PendSV_Handler(void)
 {
+    
 }
 
 /**
@@ -155,17 +157,39 @@ void SysTick_Handler(void)
 /*  file (startup_stm32f10x_xx.s).                                            */
 /******************************************************************************/
 
+extern volatile uint32_t angle_current;
+extern int16_t angle_yaw;
+
 void TIM2_IRQHandler(void)
 {
-    if (	TIM_GetITStatus(TIM2 , TIM_IT_Update) != RESET )
+    if (TIM_GetITStatus(TIM2 , TIM_IT_Update) != RESET )
     {
-        time++;
+        time_once++;
+        time_total++;
         TIM_ClearITPendingBit(TIM2 , TIM_FLAG_Update);
-        if (time>=time_index)
+        if (time_once==26)
         {
-            time=0;
-            Yaw(STOP);
-            RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2 , DISABLE);
+            time_once=0;
+            if(time_total<time_index)
+            {
+                if(angle_yaw<0) 
+                {
+                    Yaw(CLOCKWISE);
+                    angle_current--;;
+                }
+                if(angle_yaw>0) 
+                {
+                    Yaw(COUNTERCLOCKWISE);
+                    angle_current++;
+                }
+            }
+            else
+            {
+                Yaw(STOP);
+                time_total=0;
+                RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2 , DISABLE);
+            }
+            
         }
     }
 }

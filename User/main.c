@@ -26,7 +26,6 @@ int main()
     {
         if (parser.status==STATE_PARSE_FINISH_PENDING)
         {
-
             target_roll=parser.data_roll;
             target_yaw=parser.data_yaw;
             if (parser.isMinus_Roll)
@@ -57,9 +56,9 @@ int main()
 //		final_roll/=10;
 //		final_yaw/=10;
 
-		printf("%c%c",final_roll,final_yaw);
-		Roll(target_roll);
-		YawToAngle(target_yaw);
+            printf("%c%c",target_roll,target_yaw);
+            Roll(target_roll);
+            YawToAngle(target_yaw);
 		
 //		if(buff_bit>9) 
 //		{
@@ -68,7 +67,7 @@ int main()
 //			final_yaw=0;
 //		}
 		
-		PARSER_Reset(&parser);
+            PARSER_Reset(&parser);
         }
     }
 

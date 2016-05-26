@@ -17,9 +17,11 @@
   
 #include "bsp_pwm_output.h" 
 
-volatile u32 time;
+volatile u32 time_once;
+volatile u32 time_total;
 uint32_t time_index=0;
-uint32_t angle_current=0;
+volatile uint32_t angle_current=0;
+int16_t angle_yaw=0;
 
 u16 Roll_Val=1500;                      /*gibal_roll:1000-1800 mid:1500*/ 
 u16 Yaw_Val=1500;                       /*gimbal_yaw:stop:1500 counterclockwise:<1500 clockwise: >1500*/   
@@ -45,6 +47,12 @@ static void TIM3_GPIO_Config(void)
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
   GPIO_Init(GPIOA, &GPIO_InitStructure);
 
+  GPIO_InitStructure.GPIO_Pin= GPIO_Pin_4|GPIO_Pin_5;
+  GPIO_InitStructure.GPIO_Mode=GPIO_Mode_Out_PP;
+  GPIO_InitStructure.GPIO_Speed=GPIO_Speed_50MHz;
+  GPIO_Init(GPIOA,&GPIO_InitStructure);
+  GPIO_ResetBits(GPIOA,GPIO_Pin_4|GPIO_Pin_5);
+    
   /*GPIOB Configuration: TIM3 channel 3 and 4 as alternate function push-pull */
   GPIO_InitStructure.GPIO_Pin =  GPIO_Pin_0 | GPIO_Pin_1;
   GPIO_Init(GPIOB, &GPIO_InitStructure);
@@ -146,21 +154,23 @@ void Yaw(u16 turn)
 void YawAngle(int16_t angle)
 {	
 	if(angle<-360||angle>360) return;
+    angle_yaw=angle;
 	if(angle<0) Yaw(CLOCKWISE);
 	if(angle>0) Yaw(COUNTERCLOCKWISE);
-	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2 , ENABLE);
     if(angle<0) time_index=(-angle)*26;
 	else time_index=angle*26;
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2 , ENABLE);
 }
 
 void YawToAngle(uint16_t angle)
 {
 	static int16_t temp_angle=0;
+    time_total=0;
 	temp_angle=angle-angle_current;
 	if(temp_angle>180) temp_angle-=360;
 	if(temp_angle<(-180)) temp_angle+=360;
 	YawAngle(temp_angle);
-	angle_current=angle;
+//	angle_current=angle;
 }
 	
 void Reset()
